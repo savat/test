@@ -28,7 +28,7 @@
 	echo -e " |${GRAY}1${NC}| DNS Current System"
 	echo -e " |${GRAY}2${NC}| DNS Google"
 	echo ""
-	read -p "DNS : " -e -i 1 DNS
+	read -p "DNS : " -e -i 2 DNS
 	echo ""
 	echo -e " |${GRAY}1${NC}| 1 ไฟล์เชื่อมต่อได้ 1 เครื่องเท่านั้น แต่สามารถสร้างไฟล์เพิ่มได้"
 	echo -e " |${GRAY}2${NC}| 1 ไฟล์เชื่อมต่อได้หลายเครื่อง แต่ต้องใช้ชื่อบัญชีและรหัสผ่านเพื่อใช้เชื่อมต่อ"
@@ -182,7 +182,9 @@ proto $PROTOCOL
 sndbuf 0
 rcvbuf 0
 remote $CLIENT 999 udp
-remote $IP:$PORT@anywhere.truevisions.tv.ps.line.naver.jp $PORT
+remote $IP $PORT
+http-proxy-retry
+http-proxy-option CUSTOM-HEADER X-Online-Host kd.truevisions.tv
 http-proxy $IP $PROXY
 resolv-retry infinite
 nobind
@@ -356,11 +358,11 @@ END
 	
 	clear
 	echo ""
-	echo "  (\_(\ "
-	echo " (=’ :’) :* Script by Mnm Ami"
-	echo "  (,(”)(”) °.¸¸.•"
+	echo "   "
+	echo "  สคริปโดย by ตุ๊ก"
+	echo "  "
 	echo ""
-	echo "Donate via TrueMoney Wallet : 082-038-2600"
+	echo " "
 	echo ""
 	echo "OpenVPN, Squid Proxy, Nginx .....Install finish."
 	echo "IP Server : $IP"
