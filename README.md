@@ -2,6 +2,7 @@
 # OpenVPN, Pritunl, Proxy, SHH Dropbear, Web Panel
 
   wget https://github.com/savat/test/blob/master/Install
+
 chmod +x Install
 bash Install
 
