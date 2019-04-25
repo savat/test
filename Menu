@@ -5,7 +5,7 @@ GROUPNAME=nogroup
 VERSION_ID=$(cat /etc/os-release | grep "VERSION_ID")
 CHECKSYSTEM=$(tail -n +2 /etc/openvpn/server.conf | grep "^username-as-common-name")
 # IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
-# if [[ "$IP" = "" ]]; thenN
+# if  "$IP" = "" ; thenN
 IP=$(wget -4qO- "http://whatismyip.akamai.com/")
 #
 
@@ -17,10 +17,10 @@ NC='\033[0m'
 # Menu
 echo ""
 echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo " (=’ :’) :* สคริปโดย by ตุ๊ก"
+echo " "
 echo ""
-if [[ -e /usr/local/bin/Check-Thai ]]; then
+if  -e /usr/local/bin/Check-Thai ; then
 	echo -e "เมนูสคริปท์ ${GRAY}✿.｡.:* *.:｡✿*ﾟ’ﾟ･✿.｡.:*${NC}"
 	echo ""
 	echo -e "|${GRAY} 1${NC}| เพิ่มบัญชีผู้ใช้ OpenVPN"
@@ -36,7 +36,7 @@ if [[ -e /usr/local/bin/Check-Thai ]]; then
 	echo -e "|${GRAY}11${NC}| ตรวจสอบแบนด์วิดท์แบบรายชั่วโมง"
 	echo -e "|${GRAY}12${NC}| ตรวจสอบแบนด์วิดท์ต่อบัญชี"
 	echo -e "|${GRAY}13${NC}| ปรับเปลี่ยนระบบของเซิฟเวอร์"
-	if [[ $CHECKSYSTEM ]]; then
+	if  $CHECKSYSTEM ; then
 		echo -e "|${GRAY}14${NC}| แบนและปลดแบนบัญชีผู้ใช้"
 	else
 		echo -e "|${GRAY}14${NC}| แบนและปลดแบนบัญชีผู้ใช้ ${GRAY}ใช้งานไม่ได้กับเซิฟเวอร์ระบบปัจจุบัน  ${NC}"
@@ -48,7 +48,7 @@ if [[ -e /usr/local/bin/Check-Thai ]]; then
 	echo -e "|${GRAY} 0${NC}| อัพเดตเมนูสคริปท์"
 	echo -e "|${GRAY}00${NC}| เปลี่ยนเป็นภาษาอังกฤษ"
 
-elif [[ ! -e /usr/local/bin/Check-Thai ]]; then
+elif  ! -e /usr/local/bin/Check-Thai ; then
 	echo -e "MENU SCRIPT ${GRAY}✿.｡.:* *.:｡✿*ﾟ’ﾟ･✿.｡.:*${NC}"
 	echo ""
 	echo -e "|${GRAY} 1${NC}| ADD NEW CLIENT FOR OPENVPN"
@@ -64,7 +64,7 @@ elif [[ ! -e /usr/local/bin/Check-Thai ]]; then
 	echo -e "|${GRAY}11${NC}| CHECK BANDWIDTH PER HOUR"
 	echo -e "|${GRAY}12${NC}| CHECK BANDWIDTH PER USER"
 	echo -e "|${GRAY}13${NC}| CHANGE SYSTEM SERVER"
-	if [[ $CHECKSYSTEM ]]; then
+	if  $CHECKSYSTEM ; then
 		echo -e "|${GRAY}14${NC}| BAN AND UNBAN CLIENT"
 	else
 		echo -e "|${GRAY}14${NC}| BAN AND UNBAN CLIENT ${GRAY}Not available with current server.  ${NC}"
@@ -78,7 +78,7 @@ elif [[ ! -e /usr/local/bin/Check-Thai ]]; then
 fi
 
 echo ""
-if [[ -e /etc/vnstat.conf ]]; then
+if  -e /etc/vnstat.conf ; then
 	INTERFACE=`vnstat -m | head -n2 | awk '{print $1}'`
 	TOTALBW=$(vnstat -i $INTERFACE --nick local | grep "total:" | awk '{print $8" "substr ($9, 1, 1)}')
 fi
@@ -90,8 +90,8 @@ do
 	ACCOUNT="$(echo $ONOFF | cut -d: -f1)"
 	ID="$(echo $ONOFF | grep -v nobody | cut -d: -f3)"
 	ONLINE="$(cat /etc/openvpn/openvpn-status.log | grep -Eom 1 $ACCOUNT | grep -Eom 1 $ACCOUNT)"
-	if [[ $ID -ge 1000 ]]; then
-		if [[ -z $ONLINE ]]; then
+	if  $ID -ge 1000 ; then
+		if  -z $ONLINE ; then
 			OFF=$((OFF+1))
 		else
 			ON=$((ON+1))
@@ -99,17 +99,17 @@ do
 		fi
 done < /etc/passwd
 
-if [[ -e /usr/local/bin/Check-Thai ]]; then
+if  -e /usr/local/bin/Check-Thai ; then
 	echo -e "แบนด์วิดท์ที่ใช้ไปทั้งหมด ${GRAY}$TOTALBW${NC}${GRAY}B${NC}  |  กำลังเชื่อมต่อ ${GRAY}$ON${NC} บัญชี"
-elif [[ ! -e /usr/local/bin/Check-Thai ]]; then
+elif  ! -e /usr/local/bin/Check-Thai ; then
 	echo -e "TOTAL BANDWIDTH ${GRAY}$TOTALBW${NC}${GRAY}B${NC}  |  CLIENT ONLINE NOW ${GRAY}$ON${NC} CLIENT"
 fi
 echo ""
 bash Auto-Delete-Client
 echo ""
-if [[ -e /usr/local/bin/Check-Thai ]]; then
+if  -e /usr/local/bin/Check-Thai ; then
 	read -p "เลือกหัวข้อเมนูที่ต้องการใช้งาน : " MENU
-elif [[ ! -e /usr/local/bin/Check-Thai ]]; then
+elif  ! -e /usr/local/bin/Check-Thai ; then
 	read -p "Select a Menu Script : " MENU
 fi
 
@@ -117,7 +117,7 @@ case $MENU in
 
 	1) # ==================================================================================================================
 
-if [[ $CHECKSYSTEM ]]; then
+if  $CHECKSYSTEM ; then
 	echo ""
 	read -p "ชื่อบัญชีที่ต้องการสร้าง : " -e CLIENT
 
@@ -149,10 +149,10 @@ if [[ $CHECKSYSTEM ]]; then
 		echo ""
 		read -p "กลับไปที่เมนู (Y or N) : " -e -i Y TOMENU
 
-		if [[ "$TOMENU" = 'Y' ]]; then
+		if  "$TOMENU" = 'Y' ; then
 			menu
 			exit
-		elif [[ "$TOMENU" = 'N' ]]; then
+		elif  "$TOMENU" = 'N' ; then
 			exit
 		fi
 	fi
@@ -162,16 +162,16 @@ else
 	echo ""
 	read -p "ชื่อบัญชีที่ต้องการสร้าง : " -e CLIENT
 
-	if [[ -e /etc/openvpn/easy-rsa/pki/private/$CLIENT.key ]]; then
+	if  -e /etc/openvpn/easy-rsa/pki/private/$CLIENT.key ; then
 		echo ""
 		echo "ชื่อบัญชีที่ระบุอยู่ในระบบแล้ว"
 		echo ""
 		read -p "กลับไปที่เมนู (Y or N) : " -e -i Y TOMENU
 
-		if [[ "$TOMENU" = 'Y' ]]; then
+		if  "$TOMENU" = 'Y' ; then
 			menu
 			exit
-		elif [[ "$TOMENU" = 'N' ]]; then
+		elif  "$TOMENU" = 'N' ; then
 			exit
 		fi
 	fi
@@ -253,10 +253,10 @@ fi
 		echo ""
 		read -p "กลับไปที่เมนู (Y or N) : " -e -i Y TOMENU
 
-		if [[ "$TOMENU" = 'Y' ]]; then
+		if  "$TOMENU" = 'Y' ; then
 			menu
 			exit
-		elif [[ "$TOMENU" = 'N' ]]; then
+		elif  "$TOMENU" = 'N' ; then
 			exit
 		fi
 	fi
@@ -270,7 +270,7 @@ read -p "ชื่อบัญชีที่ต้องการลบ : " CLI
 egrep "^$CLIENT" /etc/passwd >/dev/null
 
 if [ $? -eq 0 ]; then
-	if [[ $CHECKSYSTEM ]]; then
+	if  $CHECKSYSTEM ; then
 		echo ""
 		userdel -f $CLIENT
 		echo ""
@@ -307,9 +307,9 @@ fi
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo "   "
+echo "       สคริปโดย by ตุ๊ก"
+echo "  "
 echo ""
 echo ""
 echo "ลำดับ   ชื่อบัญชีผู้ใช้        สถานะ      วันหมดอายุ"
@@ -325,8 +325,8 @@ do
 	ID="$(echo $ONOFF | grep -v nobody | cut -d: -f3)"
 	EXP="$(chage -l $ACCOUNT | grep "Account expires" | awk -F": " '{print $2}')"
 	ONLINE="$(cat /etc/openvpn/openvpn-status.log | grep -Eom 1 $ACCOUNT | grep -Eom 1 $ACCOUNT)"
-	if [[ $ID -ge 1000 ]]; then
-		if [[ -z $ONLINE ]]; then
+	if  $ID -ge 1000 ; then
+		if  -z $ONLINE ; then
 			printf "%-6s %-15s %-20s %-3s\n" "$C" "$ACCOUNT" "$CLIENTOFFLINE" "$EXP"
 			OFF=$((OFF+1))
 		else
@@ -356,7 +356,7 @@ exit
 		read -p "รหัสผ่านที่ต้องการปลี่ยน : " NEWPASSWORD
 		read -p "ยืนยันรหัสผ่านอีกครั้ง : " RETYPEPASSWORD
 
-		if [[ $NEWPASSWORD = $RETYPEPASSWORD ]]; then
+		if  $NEWPASSWORD = $RETYPEPASSWORD ; then
 			echo ""
 			echo "ระบบได้ทำการเปลี่ยนรหัสผ่านเรียบร้อยแล้ว"
 			echo ""
@@ -377,10 +377,10 @@ exit
 		echo ""
 		read -p "กลับไปที่เมนู (Y or N) : " -e -i Y TOMENU
 
-		if [[ "$TOMENU" = 'Y' ]]; then
+		if  "$TOMENU" = 'Y' ; then
 			menu
 			exit
-		elif [[ "$TOMENU" = 'N' ]]; then
+		elif  "$TOMENU" = 'N' ; then
 			exit
 		fi
 	fi
@@ -415,10 +415,10 @@ else
 	echo ""
 	read -p "กลับไปที่เมนู (Y or N) : " -e -i Y TOMENU
 
-	if [[ "$TOMENU" = 'Y' ]]; then
+	if  "$TOMENU" = 'Y' ; then
 		menu
 		exit
-	elif [[ "$TOMENU" = 'N' ]]; then
+	elif  "$TOMENU" = 'N' ; then
 		exit
 	fi
 fi
@@ -439,9 +439,9 @@ fi
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo "   "
+echo "           สคริปโดย by ตุ๊ก"
+echo "  "
 echo ""
 echo -e "${GRAY}ตั้งค่าเวลารีบูทเซิฟเวอร์อัตโนมัติ ${NC} "
 echo ""
@@ -531,7 +531,7 @@ exit
 
 	8)
 
-if [[ ! -e /usr/local/bin/Reboot-Log ]]; then
+if  ! -e /usr/local/bin/Reboot-Log ; then
 	echo ""
 	echo "ไม่มีบันทึกการรีบูทเซิฟเวอร์"
 	echo ""
@@ -561,10 +561,10 @@ esac
 
 	8) # ==================================================================================================================
 
-if [[ -e /usr/local/bin/speedtest ]]; then
+if  -e /usr/local/bin/speedtest ; then
 	clear
 	speedtest --share
-elif [[ ! -e /usr/local/bin/speedtest ]]; then
+elif  ! -e /usr/local/bin/speedtest ; then
 	wget -O /usr/local/bin/speedtest "https://raw.githubusercontent.com/nwqionm/OPENEXTRA/master/Speedtest"
 	chmod +x /usr/local/bin/speedtest
 	clear
@@ -595,12 +595,12 @@ TXTOTAL=$(vnstat -i $INTERFACE | grep "tx:" | awk '{print $5" "substr ($9, 1, 1)
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo "   "
+echo "          สคริปโดย by ตุ๊ก"
+echo "  "
 echo ""
-if [[ -e /usr/local/bin/Check-Thai ]]; then
-	echo -e "แบนด์วิดท์ ${GRAY}✿.｡.:* *.:｡✿*ﾟ’ﾟ･✿.｡.:*${NC}"
+if  -e /usr/local/bin/Check-Thai ; then
+	echo -e "แบนด์วิดท์ ${GRAY}${NC}"
 	echo ""
 	echo -e "วันนี้ ${GRAY}$TODAY${NC}"
 	echo -e "เมื่อวานนี้ ${GRAY}$YESTERDAY${NC}"
@@ -616,8 +616,8 @@ if [[ -e /usr/local/bin/Check-Thai ]]; then
 	echo ""
 	exit
 
-elif [[ ! -e /usr/local/bin/Check-Thai ]]; then
-	echo -e "BANDWIDTH ${GRAY}✿.｡.:* *.:｡✿*ﾟ’ﾟ･✿.｡.:*${NC}"
+elif  ! -e /usr/local/bin/Check-Thai ; then
+	echo -e "BANDWIDTH ${GRAY}${NC}"
 	echo ""
 	echo -e "TODAY ${GRAY}$TODAY${NC}"
 	echo -e "YESTERDAY ${GRAY}$YESTERDAY${NC}"
@@ -819,22 +819,22 @@ exit
 
 	12) # ==================================================================================================================
 
-if [[ ! -e /usr/local/bin/Banwidth-Per-Client ]]; then
+if  ! -e /usr/local/bin/Banwidth-Per-Client ; then
 	apt-get install python
 	wget -O /usr/local/bin/Banwidth-Per-Client "https://raw.githubusercontent.com/nwqionm/OPENEXTRA/master/Banwidth-Per-Client"
 	chmod +x /usr/local/bin/Banwidth-Per-Client
 	clear
 	echo ""
-	echo -e "Script by ${GRAY}Weerawat Khlaolamom (P'Beer) ${NC}"
-	echo -e "FB Group : ${GRAY}https://www.facebook.com/groups/143457819538014/ ${NC}"
+	echo -e "Script by ${GRAY}สคริปโดย by ตุ๊ก${NC}"
+	echo -e "FB Group : ${GRAY}https://www.facebook.com/savat54savat/ ${NC}"
 	echo ""
 	Banwidth-Per-Client
 	echo ""
 else
 	clear
 	echo ""
-	echo -e "Script by ${GRAY}Weerawat Khlaolamom (P'Beer) ${NC}"
-	echo -e "FB Group : ${GRAY}https://www.facebook.com/groups/143457819538014/ ${NC}"
+	echo -e "Script by ${GRAY}สคริปโดย by ตุ๊ก${NC}"
+	echo -e "FB Group : ${GRAY}https://www.facebook.com/savat54savat/ ${NC}"
 	echo ""
 	Banwidth-Per-Client
 	echo ""
@@ -846,9 +846,9 @@ fi
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo "   "
+echo "          สคริปโดย by ตุ๊ก"
+echo "  "
 echo ""
 echo -e "${GRAY}ปรับเปลี่ยนระบบของเซิฟเวอร์ ${NC} "
 echo ""
@@ -880,7 +880,7 @@ sed -i '28d' /etc/openvpn/server.conf
 sed -i '28d' /etc/openvpn/server.conf
 sed -i '28d' /etc/openvpn/server.conf
 sed -i '20d' /etc/openvpn/client-common.txt
-if [[ "$VERSION_ID" = 'VERSION_ID="7"' ]]; then
+if  "$VERSION_ID" = 'VERSION_ID="7"' ; then
 	echo "plugin /usr/lib/openvpn/openvpn-auth-pam.so /etc/pam.d/login" >> /etc/openvpn/server.conf
 	echo "client-cert-not-required" >> /etc/openvpn/server.conf
 	echo "username-as-common-name" >> /etc/openvpn/server.conf
@@ -917,7 +917,7 @@ esac
 
 	14) # ==================================================================================================================
 
-if [[ ! $CHECKSYSTEM ]]; then
+if  ! $CHECKSYSTEM ; then
 	echo ""
 	echo "ใช้งานไม่ได้กับเซิฟเวอร์ระบบปัจจุบัน"
 	echo ""
@@ -926,9 +926,9 @@ fi
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo "   "
+echo "          สคริปโดย by ตุ๊ก"
+echo "  "
 echo ""
 echo -e "${GRAY}แบนและปลดแบนบัญชีผู้ใช้ ${NC} "
 echo ""
@@ -960,10 +960,10 @@ elif [ $? -eq 1 ]; then
 	echo ""
 	read -p "กลับไปที่เมนู (Y or N) : " -e -i Y TOMENU
 
-	if [[ "$TOMENU" = 'Y' ]]; then
+	if  "$TOMENU" = 'Y' ; then
 		menu
 		exit
-	elif [[ "$TOMENU" = 'N' ]]; then
+	elif  "$TOMENU" = 'N' ; then
 		exit
 	fi
 fi
@@ -992,10 +992,10 @@ elif [ $? -eq 1 ]; then
 	echo ""
 	read -p "กลับไปที่เมนู (Y or N) : " -e -i Y TOMENU
 
-	if [[ "$TOMENU" = 'Y' ]]; then
+	if  "$TOMENU" = 'Y' ; then
 		menu
 		exit
-	elif [[ "$TOMENU" = 'N' ]]; then
+	elif  "$TOMENU" = 'N' ; then
 		exit
 	fi
 fi
@@ -1010,9 +1010,9 @@ esac
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Apiwat Panyoi"
-echo "  (,(”)(”) °.¸¸.• Edit the Script by Mnm Ami"
+echo "  "
+echo "      สคริปโดย by ตุ๊ก"
+echo "   "
 echo ""
 echo -e "${GRAY}ปรับความเร็วอินเตอร์เน็ต ${NC} "
 echo ""
@@ -1093,9 +1093,9 @@ esac
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo "   "
+echo "  สคริปโดย by ตุ๊ก"
+echo "  "
 echo ""
 echo -e "เปิด-ปิด-รีสตาร์ท การทำงานของระบบ ${GRAY}✿.｡.:* *.:｡✿*ﾟ’ﾟ･✿.｡.:*${NC}"
 echo ""
@@ -1159,13 +1159,13 @@ case $SERVICE in
 
 		1)
 
-	if [[ -e /etc/default/dropbear ]]; then
+	if  -e /etc/default/dropbear ; then
 		service ssh start
 		echo ""
 		echo -e "	SSH Dropbear ${GRAY}STARTED${NC}"
 		echo ""
 		exit
-	elif [[ ! -e /etc/default/dropbear ]]; then
+	elif  ! -e /etc/default/dropbear ; then
 		echo ""
 		echo "	ยังไม่ได้ติดตั้ง SSH Dropbear"
 		echo ""
@@ -1174,13 +1174,13 @@ case $SERVICE in
 		;;
 
 		2)
-	if [[ -e /etc/default/dropbear ]]; then
+	if  -e /etc/default/dropbear ; then
 		service ssh stop
 		echo ""
 		echo -e "	SSH Dropbear ${GRAY}STOPPED${NC}"
 		echo ""
 		exit
-	elif [[ ! -e /etc/default/dropbear ]]; then
+	elif  ! -e /etc/default/dropbear ; then
 		echo ""
 		echo "	ยังไม่ได้ติดตั้ง SSH Dropbear"
 		echo ""
@@ -1189,13 +1189,13 @@ case $SERVICE in
 		;;
 
 		3)
-	if [[ -e /etc/default/dropbear ]]; then
+	if  -e /etc/default/dropbear ; then
 		service ssh restart
 		echo ""
 		echo -e "	SSH Dropbear ${GRAY}RESTARTED${NC}"
 		echo ""
 		exit
-	elif [[ ! -e /etc/default/dropbear ]]; then
+	elif  ! -e /etc/default/dropbear ; then
 		echo ""
 		echo "	ยังไม่ได้ติดตั้ง SSH Dropbear"
 		echo ""
@@ -1219,8 +1219,8 @@ case $SERVICE in
 	case $SERVICEPROXY in
 
 		1)
-	if [[ "$VERSION_ID" = 'VERSION_ID="9"' || "$VERSION_ID" = 'VERSION_ID="16.04"' || "$VERSION_ID" = 'VERSION_ID="17.04"' ]]; then
-		if [[ ! -e /etc/squid/squid.conf ]]; then
+	if  "$VERSION_ID" = 'VERSION_ID="9"' || "$VERSION_ID" = 'VERSION_ID="16.04"' || "$VERSION_ID" = 'VERSION_ID="17.04"' ; then
+		if  ! -e /etc/squid/squid.conf ; then
 			echo ""
 			echo "	ยังไม่ได้ติดตั้ง Squid Proxy"
 			echo ""
@@ -1232,8 +1232,8 @@ case $SERVICE in
 			echo ""
 			exit
 		fi
-	elif [[ "$VERSION_ID" = 'VERSION_ID="7"' || "$VERSION_ID" = 'VERSION_ID="8"' || "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
-		if [[ ! -e /etc/squid3/squid.conf ]]; then
+	elif  "$VERSION_ID" = 'VERSION_ID="7"' || "$VERSION_ID" = 'VERSION_ID="8"' || "$VERSION_ID" = 'VERSION_ID="14.04"' ; then
+		if  ! -e /etc/squid3/squid.conf ; then
 			echo ""
 			echo "	ยังไม่ได้ติดตั้ง Squid Proxy"
 			echo ""
@@ -1249,8 +1249,8 @@ case $SERVICE in
 		;;
 
 		2)
-	if [[ "$VERSION_ID" = 'VERSION_ID="9"' || "$VERSION_ID" = 'VERSION_ID="16.04"' || "$VERSION_ID" = 'VERSION_ID="17.04"' ]]; then
-		if [[ ! -e /etc/squid/squid.conf ]]; then
+	if  "$VERSION_ID" = 'VERSION_ID="9"' || "$VERSION_ID" = 'VERSION_ID="16.04"' || "$VERSION_ID" = 'VERSION_ID="17.04"' ; then
+		if  ! -e /etc/squid/squid.conf ; then
 			echo ""
 			echo "	ยังไม่ได้ติดตั้ง Squid Proxy"
 			echo ""
@@ -1262,8 +1262,8 @@ case $SERVICE in
 			echo ""
 			exit
 		fi
-	elif [[ "$VERSION_ID" = 'VERSION_ID="7"' || "$VERSION_ID" = 'VERSION_ID="8"' || "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
-		if [[ ! -e /etc/squid3/squid.conf ]]; then
+	elif  "$VERSION_ID" = 'VERSION_ID="7"' || "$VERSION_ID" = 'VERSION_ID="8"' || "$VERSION_ID" = 'VERSION_ID="14.04"' ; then
+		if  ! -e /etc/squid3/squid.conf ; then
 			echo ""
 			echo "	ยังไม่ได้ติดตั้ง Squid Proxy"
 			echo ""
@@ -1279,8 +1279,8 @@ case $SERVICE in
 		;;
 
 		3)
-	if [[ "$VERSION_ID" = 'VERSION_ID="9"' || "$VERSION_ID" = 'VERSION_ID="16.04"' || "$VERSION_ID" = 'VERSION_ID="17.04"' ]]; then
-		if [[ ! -e /etc/squid/squid.conf ]]; then
+	if  "$VERSION_ID" = 'VERSION_ID="9"' || "$VERSION_ID" = 'VERSION_ID="16.04"' || "$VERSION_ID" = 'VERSION_ID="17.04"' ; then
+		if  ! -e /etc/squid/squid.conf ; then
 			echo ""
 			echo "	ยังไม่ได้ติดตั้ง Squid Proxy"
 			echo ""
@@ -1292,8 +1292,8 @@ case $SERVICE in
 			echo ""
 			exit
 		fi
-	elif [[ "$VERSION_ID" = 'VERSION_ID="7"' || "$VERSION_ID" = 'VERSION_ID="8"' || "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
-		if [[ ! -e /etc/squid3/squid.conf ]]; then
+	elif  "$VERSION_ID" = 'VERSION_ID="7"' || "$VERSION_ID" = 'VERSION_ID="8"' || "$VERSION_ID" = 'VERSION_ID="14.04"' ; then
+		if  ! -e /etc/squid3/squid.conf ; then
 			echo ""
 			echo "	ยังไม่ได้ติดตั้ง Squid Proxy"
 			echo ""
@@ -1320,11 +1320,11 @@ esac
 
 clear
 echo ""
-echo "  (\_(\ "
-echo " (=’ :’) :* Script by Mnm Ami"
-echo "  (,(”)(”) °.¸¸.•"
+echo "   "
+echo "        สคริปโดย by ตุ๊ก"
+echo "  "
 echo ""
-echo -e "แก้ไขคอนฟิกต่างๆในระบบ ${GRAY}✿.｡.:* *.:｡✿*ﾟ’ﾟ･✿.｡.:*${NC}"
+echo -e "แก้ไขคอนฟิกต่างๆในระบบ ${GRAY}${NC}"
 echo ""
 echo -e "|${GRAY}1${NC}| OPENVPN ไฟล์ต้นแบบการสร้างคอนฟิก"
 echo -e "|${GRAY}2${NC}| OPENVPN ไฟล์ข้อมูลเซิฟเวอร์"
@@ -1345,10 +1345,10 @@ nano /etc/openvpn/server.conf
 exit
 	;;
 	3)
-if [[ "$VERSION_ID" = 'VERSION_ID="9"' || "$VERSION_ID" = 'VERSION_ID="16.04"' || "$VERSION_ID" = 'VERSION_ID="17.04"' ]]; then
+if  "$VERSION_ID" = 'VERSION_ID="9"' || "$VERSION_ID" = 'VERSION_ID="16.04"' || "$VERSION_ID" = 'VERSION_ID="17.04"' ; then
 	nano /etc/squid/squid.conf
 	exit
-elif [[ "$VERSION_ID" = 'VERSION_ID="7"' || "$VERSION_ID" = 'VERSION_ID="8"' || "$VERSION_ID" = 'VERSION_ID="14.04"' ]]; then
+elif  "$VERSION_ID" = 'VERSION_ID="7"' || "$VERSION_ID" = 'VERSION_ID="8"' || "$VERSION_ID" = 'VERSION_ID="14.04"' ; then
 	nano /etc/squid3/squid.conf
 	exit
 fi
@@ -1376,10 +1376,10 @@ menu
 
 	00) # ==================================================================================================================
 
-if [[ -e /usr/local/bin/Check-Thai ]]; then
+if  -e /usr/local/bin/Check-Thai ; then
 	rm -f /usr/local/bin/Check-Thai
 	menu
-elif [[ ! -e /usr/local/bin/Check-Thai ]]; then
+elif  ! -e /usr/local/bin/Check-Thai ; then
 	echo "Check Thai" >> /usr/local/bin/Check-Thai
 	menu
 fi
