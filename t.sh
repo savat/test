@@ -102,7 +102,7 @@ newclient () {
 	echo -e " |${GRAY}1${NC}| DNS Current System"
 	echo -e " |${GRAY}2${NC}| DNS Google"
 	echo ""
-	read -p "DNS : " -e -i 1 DNS
+	read -p "DNS : " -e -i 2 DNS
 	echo ""
 	read -p "Server Name : " -e CLIENT
 	echo ""
@@ -355,7 +355,7 @@ sed -i $IP2 /etc/squid3/squid.conf;
 /etc/init.d/openvpn restart
 /etc/init.d/nginx restart
 
-	wget -O /usr/local/bin/menu "https://raw.githubusercontent.com/nwqionm/OPENEXTRA/master/Menu"
+	wget -O /usr/local/bin/menu "https://github.com/savat/test/blob/master/Menu"
 	chmod +x /usr/local/bin/menu
 	apt-get -y install vnstat
 	cd /etc/openvpn/easy-rsa/
