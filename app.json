@@ -1,0 +1,24 @@
+{
+
+
+//แก้เวอร์ชันให้สูงขึ้น
+"Version":"1.5",
+
+//ลิ้งโหลดไฟล์ .zip
+"Link":"https://github.com/maizaahub/Samai/raw/master/testt.zip",
+
+
+
+//ใส่ข้อความอะไรก็ได้
+"Message":" แก้ไขเซิฟเวอร์ที่ไม่ติดออก",
+
+
+
+
+//ข้างล่างนี้ไม่ต้องแก้
+ "releaseNotes": [
+ "-Demo"
+  ]
+
+
+}
