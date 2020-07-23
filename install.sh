@@ -1,6 +1,6 @@
 #!/bin/bash
 rm -f install.sh
-scrip="https://github.com/savat/test/raw/master/"
+scrip="https://raw.githubusercontent.com/savat/test/master/"
 clear
 cd /usr/bin
 wget -q -O cr "$scrip/cr"
@@ -42,7 +42,7 @@ clear
 
 	echo ""
 read -p "โปรดใส่รหัสสำหรับติดตั้ง:" passwds
-wget -q -O /usr/bin/pass https://github.com/savat/test/raw/master/pass.txt
+wget -q -O /usr/bin/pass https://raw.githubusercontent.com/savat/test/master/pass.txt
 if ! grep -w -q $passwds /usr/bin/pass; then
 clear
 echo ""
