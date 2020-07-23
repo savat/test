@@ -1,0 +1,230 @@
+#!/bin/bash
+if [[ $1 == "" ]]
+then
+clear
+cr
+echo "             ╭━━━━━━━━━━━━━━━━━━╮
+             ┣ 》1. เพิ่มผู้ใช้งาน
+             ┣ 》2. ลบบัญชี
+             ┣ 》3. แสดงบัญชีทั้งหมด 
+             ┣ 》4. เปลียนคีย์ลับ
+             ┣ 》5. รีสตารต์
+             ┣ 》6. ถอนติดตั้ง
+             ┣━━━━━━━━━━━━━━━━━━╯"
+read -p "             ╰┫ Enter Number  :  " opcao
+else
+opcao=$1
+fi
+case $opcao in
+ 1 )
+#!/bin/bash
+if [ -e "/var/lib/premium-script" ]; then
+		echo "continue..."
+		clear
+	else
+		mkdir /var/lib/premium-script;
+fi
+
+clear
+cr
+echo "     ╭━━━━━━━━━━━━━━━━━━━━━━━━━━╮
+     ┣ create an account L2TP ..?   
+     ┣━━━━━━━━━━━━━━━━━━━━━━━━━━╯"
+read -p "     ┣ Username : " username
+if [[ "$username" = "" ]]; then
+clear
+cr
+echo "     ╭━━━━━━━━━━━━━━━━━━━━━━━━━━╮
+     ┣ create an account L2TP ..?   
+     ┣━━━━━━━━━━━━━━━━━━━━━━━━━━╯"
+echo "     ╰┫ ผิดพลาด คุณไม่ได้ป้อนชื่อ   
+" 
+exit
+fi
+grep -E "^$username" /etc/ppp/chap-secrets >/dev/null
+if [ $? -eq 0 ]; then
+clear
+cr
+echo "        ╭━━━━━━━━━━━━━━━━━━━━━━╮ 
+        ┣ ชื่อผู้ใช้  $username มีอยู่แล้ว
+        ╰━━━━━━━━━━━━━━━━━━━━━━╯ 
+"
+exit 0
+else
+read -p "     ┣ Password : " password
+read -p "     ┣ Expired  : " masa_aktif
+MYIP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+today=`date +%s`
+masa_aktif_detik=$(( $masa_aktif * 86400 ))
+saat_expired=$(($today + $masa_aktif_detik))
+tanggal_expired=$(date -u --date="1970-01-01 $saat_expired sec GMT" +%Y/%m/%d)
+tanggal_expired_display=$(date -u --date="1970-01-01 $saat_expired sec GMT" '+%d %B %Y')
+clear
+echo "creating Account..."
+sleep 0.5
+echo "creating New L2TP Username: $username"
+sleep 0.5
+echo "creating Password: $password"
+sleep 0.5
+
+echo "$username * $password *" >> /etc/ppp/chap-secrets
+echo "$username * $password *  $saat_expired"  >> /var/lib/premium-script/data-user-L2TP
+  clear
+  cr          
+  echo "        ╭━━━━━━━━━━━━━━━━━━━━━━━━━╮  
+        ┃  L2TP VPN พร้อมใช้งาน  
+        ┣━━━━━━━━━━━━━━━━━━━━━╯ 
+        ┣ ไอพี     : $MYIP          
+        ┣ ชื่อผู้ใช้   : $username         
+        ┣ รหัสผ่าน  : $password "
+cat /usr/bin/key.txt
+echo "        ┣ หมดอายุ  : $tanggal_expired_display   
+        ┣━━━━━━━━━━━━━━━━━━━━━━━━━╯ 
+"
+fi
+exit
+;;
+2 )
+clear
+cr
+echo "     ╭━━━━━━━━━━━━━━━━━━━━━━━━━━╮ 
+     ┣ Delet  an account L2TP ..?    
+     ┣━━━━━━━━━━━━━━━━━━━━━━━━━━╯ "
+read -p "     ╰┫ใส่ชื่อผู้ใช้ที่ต้องการลบ : " username
+if [[ "$username" = "" ]]; then
+clear
+cr
+echo "     ╭━━━━━━━━━━━━━━━━━━━━━━━━━━╮ 
+     ┣ Delet  an account L2TP ..?    
+     ┣━━━━━━━━━━━━━━━━━━━━━━━━━━╯ "
+echo "     ╰┫ ผิดพลาด คุณไม่ได้ป้อนชื่อ  
+ " 
+exit
+fi
+grep -E "^$username" /etc/ppp/chap-secrets >/dev/null
+if [ $? -eq 0 ]; then
+# changing the password
+username2="/$username/d";
+sed -i $username2 /etc/ppp/chap-secrets
+ sed -i $username2 /var/lib/premium-script/data-user-L2TP
+sed -i '/^$/d' /etc/ppp/chap-secrets
+sed -i '/^$/d' /var/lib/premium-script/data-user-L2TP
+clear
+  cr
+echo "        ╭━━━━━━━━━━━━━━━━━━━━━━━╮ 
+        ┣ ลบบันชีชื่อ $username เรียบร้อย   
+        ╰━━━━━━━━━━━━━━━━━━━━━━━╯
+ "
+exit        
+else
+clear
+  cr
+echo "        ╭━━━━━━━━━━━━━━━━━━━━━━╮ 
+        ┣ ไม่พบชื่อผู้ใช้  $username 
+        ╰━━━━━━━━━━━━━━━━━━━━━━╯ 
+"
+    exit 1
+fi
+;;
+3 )
+totalaccounts=`cat /var/lib/premium-script/data-user-L2TP | wc -l`
+echo " " > /tmp/alluser-L2TP-data
+for((i=1; i<=$totalaccounts; i++ ))
+       do  
+       
+username=`cat /var/lib/premium-script/data-user-L2TP | awk '{print $1}' | head -n $i | tail -n 1`
+userpass=`cat /var/lib/premium-script/data-user-L2TP | awk '{print $3}' | head -n $i | tail -n 1`
+saat_expired=`cat /var/lib/premium-script/data-user-L2TP | awk '{print $5}' | head -n $i | tail -n 1`
+tanggal_expired=$(date -u --date="1970-01-01 $saat_expired sec GMT" +%Y/%m/%d)
+tanggal_expired_display=$(date -u --date="1970-01-01 $saat_expired sec GMT" '+%d %B %Y')
+printf "%-2s %-15s %-15s %-15s\n" "" "$username" "$userpass" "$tanggal_expired_display" >> /tmp/alluser-L2TP-data
+#echo "   $username  ┈  $userpass  ┈  $tanggal_expired_display " >> /tmp/alluser-L2TP-data
+done
+clear
+cr
+echo " ╭━━━━┻━━━━━━━━━━━━━╮    "
+echo " ┣ VPN L2TP Accounts    "
+echo " ╰━━┳━━━━━━━━━━━┳━━━╯    "
+echo " ╭━━┻━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮   "
+printf "%-2s %-15s %-15s %-15s\n" "" "username" "Password" "Expired_display"
+cat /tmp/alluser-L2TP-data
+echo " ╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯  
+  "
+exit
+;;
+4 )
+clear
+cr
+echo "        ╭━━━━━━━━━━━━━━━━━━━━━╮ 
+        ┣ Chang Key L2TP ..?    
+        ┣━━━━━━━━━━━━━━━━━━━━━╯ "
+read -p "        ╰┫Setup Key : " VPN_IPSEC_PSK
+if [[ "$VPN_IPSEC_PSK" = "" ]]; then
+clear
+cr
+echo "        ╭━━━━━━━━━━━━━━━━━━━━━╮ 
+        ┣ Chang Key L2TP ..?    
+        ┣━━━━━━━━━━━━━━━━━━━━━╯ "
+echo "        ╰┫ผิดพลาด คุณไม่ได้ป้อนคีย์   
+" 
+exit
+fi
+cat > /etc/ipsec.secrets <<EOF
+%any  %any  : PSK "$VPN_IPSEC_PSK"
+EOF
+echo "        ┣ คีย์ลับ    : $VPN_IPSEC_PSK " > /usr/bin/key.txt
+# Restart services
+mkdir -p /run/pluto
+service fail2ban restart 2>/dev/null
+service ipsec restart 2>/dev/null
+service xl2tpd restart 2>/dev/null
+clear
+cr
+echo "    
+  ตั้งคีย์ลับใหม่เป็น   $VPN_IPSEC_PSK  เรียบร้อย  
+"
+exit
+;;
+5 )
+clear
+cr
+# Restart services
+mkdir -p /run/pluto
+service fail2ban restart 2>/dev/null
+service ipsec restart 2>/dev/null
+service xl2tpd restart 2>/dev/null
+echo "    
+  รีสตารต L2TP  เรียบร้อย  
+"
+exit
+;;
+6 )
+echo ""
+echo " แน่ใจว่าต้องการถอนติดตั้ง L2TP ไม่สามารกูคืนได้  Y/n   "
+echo ""
+read -p " : " selet
+
+if [[ "$selet" = "y" || "$selet" = "Y" ]]; then
+apt-get -y --purge remove xl2tpd > /dev/null 2>&1
+apt-get -y --purge remove ipsec > /dev/null 2>&1
+clear
+cr
+echo "        ╭━━━━━━━━━━━━━━━━━━━━╮    "
+echo "        ┣ ถอนติดตั้ง L2TP เรียบร้อย    "
+echo "        ╰━━━━━━━━━━━━━━━━━━━━╯    "
+exit
+elif [[ "$selet" = "" ]]; then
+clear
+cr
+echo "          ╭━━━━━━━━━━━━━━━━━━╮    "
+echo "          ┣ ยกเลิกถอนติดตั้ง L2TP    "
+echo "          ╰━━━━━━━━━━━━━━━━━━╯    "
+exit
+fi
+;;
+esac
+clear
+cr
+echo "           ╭━━━━━━━━━━━━━━━━╮    "
+echo "           ┣ คุณใช้คำสั่งผิดพลาด    "
+echo "           ╰━━━━━━━━━━━━━━━━╯    "
