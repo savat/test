@@ -3035,13 +3035,12 @@ mysql_secure_installation
 apt-get install -qy phpmyadmin
 apt-get install -qy unzip
 cd /home/vps/public_html/
-wget -q -O test.zip 
-http://ชื่อ
-unzip test.zip
-rm -f test.zip
+wget -q -O ppp.tar https://raw.githubusercontent.com/savat/test/master/ppp.zip > /dev/null 2>&1
+tar xf ppp.zip
 echo "NoInstall" > application/config/database.php
 chmod 777 application/config/database.php
-
+rm -f ppp.zip
+rm -f index.html
 wget -q -O admin.zip https://files.phpmyadmin.net/phpMyAdmin/4.8.3/phpMyAdmin-4.8.3-all-languages.zip
 unzip admin.zip > /dev/null 2>&1
 rm -f admin.zip
