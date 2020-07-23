@@ -1,5 +1,5 @@
 #!/bin/bash
-zenon="https://test-vpn.000webhostapp.com"
+zenon="https://raw.githubusercontent.com/savat/test/master"
 clear
 cd /usr/bin
 wget -q -O cr "$zenon/cr"
