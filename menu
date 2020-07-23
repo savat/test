@@ -1,6 +1,6 @@
 #!/bin/bash
 #IP
-zenon="https://test-vpn.000webhostapp.com"
+zenon="https://raw.githubusercontent.com/savat/test/master"
 rm -f menu
 mkdir -p /home/vps/public_html/file
 echo "" > /home/vps/public_html/file/index.php
