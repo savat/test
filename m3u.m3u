@@ -1,0 +1,98 @@
+#EXTM3U Line ID : thaiip.tv
+#EXTINF:-1 tvg-id="1" tvg-logo-small="http://thaiip.tv/tvlogo2/1.png" tvg-logo="http://thaiip.tv/tvlogo2/1.png" tvg-chno="1" group-title="THAI Digital TV" tvg-name="ททบ. 5", TH: THAI 5
+https://tc-live1.sanook.com/live/22302_ch5.m3u8
+#EXTINF:-1  tvg-id="2" tvg-logo-small="http://thaiip.tv/tvlogo2/2.png" tvg-logo="http://thaiip.tv/tvlogo2/2.png" tvg-chno="2" group-title="THAI Digital TV" tvg-name="NBT2", TH: NBT 2
+http://live.prd.go.th:1935/live/ch1_L.sdp/chunklist.m3u8
+#EXTINF:-1  tvg-id="3" tvg-logo-small="http://thaiip.tv/tvlogo2/3.png" tvg-logo="http://thaiip.tv/tvlogo2/3.png" tvg-chno="3" group-title="THAI Digital TV" tvg-name="ไทย พีบีเอส", TH: Thai PBS 3 HD
+http://thaipbs-live.cdn.byteark.com/live/playlist_1080p/index.m3u8
+#EXTINF:-1 tvg-id="4" tvg-logo-small="http://thaiip.tv/tvlogo2/altv4.png" tvg-logo="http://thaiip.tv/tvlogo2/altv4.png" tvg-chno="4" group-title="THAI Digital TV" tvg-name="ALTV 4", ALTV 4
+https://thaipbs-ujxrch.cdn.byteark.com/live/playlist.m3u8
+#EXTINF:-1 tvg-id="5" tvg-logo-small="http://thaiip.tv/tvlogo2/1.png" tvg-logo="http://thaiip.tv/tvlogo2/1.png" tvg-chno="5" group-title="THAI Digital TV" tvg-name="ช่อง 5", TH: THAI 5 HD
+https://tc-live1.sanook.com/live/22302_ch5.m3u8
+#EXTINF:-1 tvg-id="6"  tvg-logo="http://thaiip.tv/tvlogo2/wch.png" tvg-chno="6" group-title="THAI Digital TV" tvg-name="White Channel", TH:White Channel
+http://symc-cdn.violin.co.th:1935/tndedge/whitechannel/chunklist.m3u8
+#EXTINF:-1 tvg-id="7" tvg-logo-small="http://thaiip.tv/tvlogo2/7.png" tvg-logo="http://thaiip.tv/tvlogo2/7.png" tvg-chno="7" group-title="THAI Digital TV" tvg-name="ช่อง 7", TH:THAI 7HD
+http://edge160.bugaboo.tv/liveedgech7_partner/smil:auto.smil/chunklist_b1210000_sleng.m3u8
+#EXTINF:-1 tvg-id="8" tvg-logo-small="http://thaiip.tv/tvlogo2/ch8.png" tvg-logo="http://thaiip.tv/tvlogo2/ch8.png" tvg-chno="8" group-title="THAI Digital TV" tvg-name="Channel 8", TH:Channel8
+http://54c241893bf39.streamlock.net:1935/ch8/ch8/chunklist.m3u8
+#EXTINF:-1 tvg-id="9" tvg-logo-small="http://thaiip.tv/tvlogo2/30.png" tvg-logo="http://thaiip.tv/tvlogo2/30.png" tvg-chno="9" group-title="THAI Digital TV" tvg-name="ช่อง 9", TH: MCOT HD 30
+http://livesport2018.dyndns.tv:8080/live/mcothd/playlist.m3u8
+#EXTINF:-1 tvg-id="10" tvg-logo-small="http://thaiip.tv/tvlogo2/10.png" tvg-logo="http://thaiip.tv/tvlogo2/10.png" tvg-chno="10" group-title="THAI Digital TV" tvg-name="ไทยรัฐสภา", TH: ParliamentTV
+http://49.231.66.85:1935/live/tptv/playlist.m3u8
+#EXTINF:-1 tvg-id="11" tvg-chno="11" tvg-logo="http://thaiip.tv/tvlogo2/tsport.png" group-title="THAI Digital TV" tvg-name="T sport", T-Sport
+http://61.19.18.239/live/tsport.sdp/chunklist_w2042959702.m3u8
+#EXTINF:-1 tvg-id="12" tvg-chno="12" tvg-logo="http://thaiip.tv/tvlogo2/news1.png" group-title="THAI Digital TV" tvg-name="News1" , TH: News1
+http://news1.live14.com/stream/news1_hi.m3u8
+#EXTINF:-1 tvg-id="13" tvg-logo-small="http://thaiip.tv/tvlogo2/33.png" tvg-logo="http://thaiip.tv/tvlogo2/33.png" tvg-chno="33" group-title="THAI Digital TV" tvg-name="ช่อง 13", TH: THAI 33 HD
+http://27.254.130.64/live01/ch0.m3u8?p=st
+#EXTINF:-1 tvg-id="14" tvg-chno="14" tvg-logo="http://thaiip.tv/tvlogo2/lava.png" group-title="THAI Digital TV" tvg-name="lava",CartoonLava
+http://ws.flv.nimo.tv/live/su1599512427560r1e0b7afba22fec0a5191643a588e9f06_high.flv
+#EXTINF:-1 tvg-id="15" tvg-logo="http://thaiip.tv/tvlogo2/ctb.png" group-title="THAI Digital TV" tvg-name="CTB",  CTB
+http://vip.login.in.th:1935/CTB/CTB/chunklist_w503199585.m3u8
+#EXTINF:-1 tvg-id="16" tvg-logo-small="http://thaiip.tv/tvlogo2/16.png" tvg-logo="http://thaiip.tv/tvlogo2/16.png" tvg-chno="16" group-title="THAI Digital TV" tvg-name="TNN", TH: TNN 16 HD
+http://27.254.130.64/live01/chsd_TNN_5.m3u8?p=st
+#EXTINF:-1 tvg-id="17" tvg-logo-small="http://thaiip.tv/tvlogo2/gang.png" tvg-logo="http://thaiip.tv/tvlogo2/gang.png" tvg-chno="17" group-title="THAI Digital TV" tvg-name="GANG CRRTOON", TH:GANG CRRTOON
+http://gcorigin.wisdomcloud.net/live/master/playlist.m3u8_1000.m3u8
+#EXTINF:-1 tvg-id="18" tvg-logo-small="http://thaiip.tv/tvlogo2/m.png" tvg-logo="http://thaiip.tv/tvlogo2/m.png" tvg-chno="18" group-title="THAI Digital TV" tvg-name="M Channel", M Channel
+http://www.m-channel.com:1935/live/my_stream.sdp/chunklist_w1568234806.m3u8
+#EXTINF:-1 tvg-id="19" tvg-logo-small="http://thaiip.tv/tvlogo2/sabai.png" tvg-logo="http://thaiip.tv/tvlogo2/sabai.png" tvg-chno="19" group-title="THAI Digital TV" tvg-name="สบายดีทีวี", TH:SABAIDEE TV
+http://stream.rs.co.th/sbd-hi/index.m3u8
+#EXTINF:-1 tvg-id="20" tvg-logo-small="http://thaiip.tv/tvlogo2/ch2.png" tvg-logo="http://thaiip.tv/tvlogo2/ch2.png" tvg-chno="20" group-title="THAI Digital TV" tvg-name="ช่อง 2", TH: Channel 2
+http://stream.rs.co.th/ch2-hi/index.m3u8
+#EXTINF:-1 tvg-id="21" tvg-logo-small="http://thaiip.tv/tvlogo2/sme.png" tvg-logo="http://thaiip.tv/tvlogo2/sme.png" tvg-chno="21" group-title="THAI Digital TV" tvg-name="Smart SME", Smart SME
+https://ssme-zujawl.cdn.byteark.com/live/playlist_720p/index.m3u8
+#EXTINF:-1 tvg-id="22" tvg-logo-small="http://thaiip.tv/tvlogo2/22.png" tvg-logo="http://thaiip.tv/tvlogo2/22.png" tvg-chno="22" group-title="THAI Digital TV" tvg-name="NATION TV", TH: NATION TV 22
+http://27.254.130.64/live01/ch8.m3u8?p=st
+#EXTINF:-1 tvg-id="23" tvg-logo-small="http://thaiip.tv/tvlogo2/23.png" tvg-logo="http://thaiip.tv/tvlogo2/23.png" tvg-chno="23" group-title="THAI Digital TV" tvg-name="WORK POINT", TH: WORK POINT 23
+http://119.59.125.74/stream/totnew.php?channel_id=a9a68ab5471d4d39ba25695a66957067&.m3u8
+#EXTINF:-1 tvg-id="24" tvg-logo-small="http://thaiip.tv/tvlogo2/24.png" tvg-logo="http://thaiip.tv/tvlogo2/24.png" tvg-chno="24" group-title="THAI Digital TV" tvg-name="True4u", TH: True4u 24
+http://183.182.100.184/live/true4u/chunklist.m3u8
+#EXTINF:-1 tvg-id="25" tvg-logo-small="http://thaiip.tv/tvlogo2/25.png" tvg-logo="http://thaiip.tv/tvlogo2/25.png" tvg-chno="25" group-title="THAI Digital TV" tvg-name="GMM25", TH: GMM25 Channel
+http://119.59.125.74/stream/totnew.php?channel_id=ab0b43ef8363438098a94101e93ca138
+#EXTINF:-1 tvg-id="26" tvg-logo-small="http://thaiip.tv/tvlogo2/cartoonclub.png" tvg-logo="http://thaiip.tv/tvlogo2/cartoonclub.png" tvg-chno="26" group-title="THAI Digital TV" tvg-name="CARTOON CLUB", TH: CARTOON CLUB
+http://edge4-bkk.3bb.co.th:1935/CartoonClub_Livestream/cartoonclub_480P.stream/chunklist.m3u8
+#EXTINF:-1 tvg-id="27" tvg-logo-small="http://thaiip.tv/tvlogo2/27.png" tvg-logo="http://thaiip.tv/tvlogo2/27.png" tvg-chno="27" group-title="THAI Digital TV" tvg-name="ช่อง 8", TH: Channel 8 กดช่อง 27
+http://stream.rs.co.th/ch8-hi/index.m3u8
+#EXTINF:-1  tvg-id="28" tvg-logo-small="http://thaiip.tv/tvlogo2/monoplus.png" tvg-logo="http://thaiip.tv/tvlogo2/monoplus.png" tvg-chno="28" group-title="THAI Digital TV" tvg-name="Mono Plus", TH: Monoplus
+https://edge4-bkk.3bb.co.th:9443/MonoPlus_LiveHLS/monoplusLive_HLS720p.stream/chunklist_w501711662.m3u8
+#EXTINF:-1 tvg-id="29" tvg-logo-small="http://thaiip.tv/tvlogo2/29.png" tvg-logo="http://thaiip.tv/tvlogo2/29.png" tvg-chno="29" group-title="THAI Digital TV" tvg-name="Mono29", TH: MONO29 HD
+https://edge2-bkk.3bb.co.th:9443/MONO29_HLS_1080P/mono29hls_1080TH.stream/chunklist_w1578972109.m3u8
+#EXTINF:-1 tvg-id="30" tvg-logo-small="http://thaiip.tv/tvlogo2/30.png" tvg-logo="http://thaiip.tv/tvlogo2/30.png" tvg-chno="30" group-title="THAI Digital TV" tvg-name="MCOT HD 30", TH: MCOT HD 30
+http://livesport2018.dyndns.tv:8080/live/mcothd/playlist.m3u8
+#EXTINF:-1 tvg-id="31" tvg-logo-small="http://thaiip.tv/tvlogo2/31.png" tvg-logo="http://thaiip.tv/tvlogo2/31.png" tvg-chno="31" group-title="THAI Digital TV" tvg-name="One 31", TH: GMM ONE HD
+https://one31-rlbwkq.cdn.byteark.com/live/playlist_480p/index.m3u8
+#EXTINF:-1 tvg-id="32" tvg-logo-small="http://thaiip.tv/tvlogo2/32.png" tvg-logo="http://thaiip.tv/tvlogo2/32.png" tvg-chno="32" group-title="THAI Digital TV" tvg-name="ไทยรัฐทีวี", TH: Thairath 32
+http://live.thairath.co.th/trtv2/playlist_720p/index.m3u8
+#EXTINF:-1 tvg-id="33" tvg-logo-small="http://thaiip.tv/tvlogo2/33.png" tvg-logo="http://thaiip.tv/tvlogo2/33.png" tvg-chno="33" group-title="THAI Digital TV" tvg-name="ไทยทีวีสีช่อง 3", TH: THAI 33 HD
+http://119.59.125.74/stream/totnew.php?channel_id=a4485b656d764f308c63b14a8bf62326
+#EXTINF:-1 tvg-id="34" tvg-logo-small="http://thaiip.tv/tvlogo2/34.png" tvg-logo="http://thaiip.tv/tvlogo2/34.png" tvg-chno="34" group-title="THAI Digital TV" tvg-name="Amarin TV", TH: Amarin TV Thai HD
+http://119.59.125.74/stream/totnew.php?channel_id=78f57ebcf6064b308d75208a20756983
+#EXTINF:-1 tvg-id="35" tvg-logo-small="http://thaiip.tv/tvlogo2/35.png" tvg-logo="http://thaiip.tv/tvlogo2/35.png" tvg-chno="35" group-title="THAI Digital TV" tvg-name="ช่อง7สี", TH:THAI 7HD
+http://119.59.125.74/stream/totnew.php?channel_id=ddfa47e726444446864b14e0e819fdde&.m3u
+#EXTINF:-1 tvg-id="36" tvg-logo-small="http://thaiip.tv/tvlogo2/36.png" tvg-logo="http://thaiip.tv/tvlogo2/36.png" tvg-chno="36" group-title="THAI Digital TV" tvg-name="PPTV", TH: PPTV HD
+http://27.254.130.64/live01/ch2.m3u8?p=st
+
+#EXTINF:-1 tvg-id="37" tvg-logo-small="http://thaiip.tv/tvlogo2/anu1.png" tvg-logo="http://thaiip.tv/tvlogo2/anu1.png" tvg-chno="37" group-title="THAI Digital TV" tvg-name="อนุบาล1",อนุบาล1
+https://dltv-live-edge.catcdn.cloud/dltv10_720p/index.m3u8
+#EXTINF:-1 tvg-id="38" tvg-logo-small="http://thaiip.tv/tvlogo2/anu2.png" tvg-logo="http://thaiip.tv/tvlogo2/anu2.png" tvg-chno="38" group-title="THAI Digital TV" tvg-name="อนุบาล2",อนุบาล2
+https://dltv-live-edge.catcdn.cloud/dltv11_720p/index.m3u8
+#EXTINF:-1 tvg-id="39" tvg-logo-small="http://thaiip.tv/tvlogo2/anu3.png" tvg-logo="http://thaiip.tv/tvlogo2/anu3.png" tvg-chno="39" group-title="THAI Digital TV" tvg-name="อนุบาล3",อนุบาล3
+https://dltv-live-edge.catcdn.cloud/dltv12_720p/index.m3u8
+#EXTINF:-1 tvg-id="40" tvg-logo-small="http://thaiip.tv/tvlogo2/pratom1.png" tvg-logo="http://thaiip.tv/tvlogo2/pratom1.png" tvg-chno="40" group-title="THAI Digital TV" tvg-name="ประถมศึกษาปีที่1",ประถมศึกษาปีที่1
+https://dltv-live-edge.catcdn.cloud/dltv01_720p/index.m3u8
+#EXTINF:-1 tvg-id="41" tvg-logo-small="http://thaiip.tv/tvlogo2/pratom2.png" tvg-logo="http://thaiip.tv/tvlogo2/pratom2.png" tvg-chno="41" group-title="THAI Digital TV" tvg-name="ประถมศึกษาปีที่2",ประถมศึกษาปีที่2
+https://dltv-live-edge.catcdn.cloud/dltv02_720p/index.m3u8
+#EXTINF:-1 tvg-id="42" tvg-logo-small="http://thaiip.tv/tvlogo2/pratom3.png" tvg-logo="http://thaiip.tv/tvlogo2/pratom3.png" tvg-chno="42" group-title="THAI Digital TV" tvg-name="ประถมศึกษาปีที่3",ประถมศึกษาปีที่3
+https://dltv-live-edge.catcdn.cloud/dltv03_720p/index.m3u8
+#EXTINF:-1 tvg-id="43" tvg-logo-small="http://thaiip.tv/tvlogo2/pratom4.png" tvg-logo="http://thaiip.tv/tvlogo2/pratom4.png" tvg-chno="43" group-title="THAI Digital TV" tvg-name="ประถมศึกษาปีที่4",ประถมศึกษาปีที่4
+https://dltv-live-edge.catcdn.cloud/dltv04_720p/index.m3u8
+#EXTINF:-1 tvg-id="44" tvg-logo-small="http://thaiip.tv/tvlogo2/pratom5.png" tvg-logo="http://thaiip.tv/tvlogo2/pratom5.png" tvg-chno="44" group-title="THAI Digital TV" tvg-name="ประถมศึกษาปีที่5",ประถมศึกษาปีที่5
+https://dltv-live-edge.catcdn.cloud/dltv05_720p/index.m3u8
+#EXTINF:-1 tvg-id="45" tvg-logo-small="http://thaiip.tv/tvlogo2/pratom6.png" tvg-logo="http://thaiip.tv/tvlogo2/pratom6.png" tvg-chno="45" group-title="THAI Digital TV" tvg-name="ประถมศึกษาปีที่6",ประถมศึกษาปีที่6
+https://dltv-live-edge.catcdn.cloud/dltv06_720p/index.m3u8
+#EXTINF:-1 tvg-id="46" tvg-logo-small="http://thaiip.tv/tvlogo2/mty1.png" tvg-logo="http://thaiip.tv/tvlogo2/mty1.png" tvg-chno="46" group-title="THAI Digital TV" tvg-name="มัธยมศึกษาปีที่1",มัธยมศึกษาปีที่1
+https://dltv-live-edge.catcdn.cloud/dltv07_720p/index.m3u8
+#EXTINF:-1 tvg-id="47" tvg-logo-small="http://thaiip.tv/tvlogo2/mty2.png" tvg-logo="http://thaiip.tv/tvlogo2/mty2.png" tvg-chno="47" group-title="THAI Digital TV" tvg-name="มัธยมศึกษาปีที่2",มัธยมศึกษาปีที่2
+https://dltv-live-edge.catcdn.cloud/dltv08_720p/index.m3u8
+#EXTINF:-1 tvg-id="48" tvg-logo-small="http://thaiip.tv/tvlogo2/mty3.png" tvg-logo="http://thaiip.tv/tvlogo2/mty3.png" tvg-chno="48" group-title="THAI Digital TV" tvg-name="มัธยมศึกษาปีที่3",มัธยมศึกษาปีที่3
+https://dltv-live-edge.catcdn.cloud/dltv09_7
