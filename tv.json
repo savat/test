@@ -1,7 +1,6 @@
 [{
         "title": "Dawn of the Planet of the Apes",
         "image": "https://api.androidhive.info/json/movies/1.jpg",
-        "uri":"http://thaipbs-live.cdn.byteark.com/live/playlist_1080p/index.m3u8",
         "rating": 8.3,
         "releaseYear": 2014,
         "genre": ["Action", "Drama", "Sci-Fi"]
