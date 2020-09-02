@@ -1,15 +1,15 @@
 [{
         "title": "CH3",
         "image": "https://api.androidhive.info/json/movies/1.jpg",
-        "rating": ช่อง3,
-        "releaseYear": online,
+        "rating": 3,
+        "releaseYear": 2020,
         "genre": ["xxx"]
     },
     {
         "title": "CH5",
         "image": "https://api.androidhive.info/json/movies/2.jpg",
-        "rating": ช่อง5,
-        "releaseYear": online,
+        "rating": 5,
+        "releaseYear": 2020,
         "genre": ["xxx"]
     },
     {
