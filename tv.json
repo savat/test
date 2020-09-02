@@ -1,16 +1,16 @@
 [{
         "title": "CH3",
         "image": "https://api.androidhive.info/json/movies/1.jpg",
-        "rating": ,
+        "rating": ช่อง3,
         "releaseYear": online,
-        "genre": [""]
+        "genre": ["xxx"]
     },
     {
         "title": "CH5",
         "image": "https://api.androidhive.info/json/movies/2.jpg",
-        "rating": ,
-        "releaseYear": ,
-        "genre": [""]
+        "rating": ช่อง5,
+        "releaseYear": online,
+        "genre": ["xxx"]
     },
     {
         "title": "Transformers: Age of Extinction",
