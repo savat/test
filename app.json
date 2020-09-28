@@ -2,15 +2,16 @@
 
 
 //แก้เวอร์ชันให้สูงขึ้น
-"Version":"1.9",
+"Version":"2.0",
 
 //ลิ้งโหลดไฟล์ .zip
-"Link":"https://github.com/savat/test/raw/master/ovpn3.zip",
+"Link":"https://github.com/savat/test/raw/master/ovpn4.zip",
 
 
 
 //ใส่ข้อความอะไรก็ได้
-"Message":"เพิ่มเซิฟ sg ใหม่หมด
+"Message":"เพิ่มเซิฟไทย vpneate 
+   แก้เพโลดเซิฟไทย
    แก้ไฟล์ทรูไม่ติด ",
 
 
