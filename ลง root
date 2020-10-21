@@ -1,5 +1,0 @@
-wget
-https://raw.githubusercontent.com/savat/test/master/sshd_config.sh
-
-chmod +x sshd_config.sh
-./sshd_config.sh
