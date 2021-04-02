@@ -85,42 +85,49 @@
 
 ## MainActivity.java
 
-1	import androidx.appcompat.app.AppCompatActivity; 
-2	 
-3	import android.os.Bundle; 
-4	import android.view.View; 
-5	import android.widget.Button; 
-6	import android.widget.EditText; 
-7	import android.widget.Toast; 
-8	 
-9	public class MainActivity extends AppCompatActivity { 
-10	 
-11	    EditText userName,userEmail,userPassword; 
-12	    Button submitBtn; 
-13	 
-14	    @Override 
-15	    protected void onCreate(Bundle savedInstanceState) { 
-16	        super.onCreate(savedInstanceState); 
-17	        setContentView(R.layout.activity_main); 
-18	 
-19	        userName = findViewById(R.id.name); 
-20	        userEmail = findViewById(R.id.email); 
-21	        userPassword = findViewById(R.id.password); 
-22	        submitBtn = findViewById(R.id.submit_btn); 
-23	 
-24	        submitBtn.setOnClickListener(new View.OnClickListener() { 
-25	            @Override 
-26	            public void onClick(View view) { 
-27	                String name = userName.getText().toString().trim(); 
-28	                String email = userEmail.getText().toString().trim(); 
-29	                String password = userPassword.getText().toString().trim(); 
-30	 
-31	                Toast.makeText(MainActivity.this, "Name: "+name+"\n\n Email: "+email+ 
-32	                        "\n\n Password: "+password, Toast.LENGTH_LONG).show(); 
-33	            } 
-34	        }); 
-35	    } 
-36	} 
-37	 
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+
+public class EditTvExample extends AppCompatActivity {
+
+    private EditText eT1,eT2,eT3,eT4;
+    private Button submitBt;
+    private TextView textView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.edit_tv_example);
+
+        eT1 = (EditText)findViewById(R.id.editText);
+        eT2 = (EditText)findViewById(R.id.editText2);
+        eT3 = (EditText)findViewById(R.id.editText3);
+        eT4 = (EditText)findViewById(R.id.editText4);
+
+        submitBt = (Button)findViewById(R.id.submitBtn);
+
+        textView = (TextView)findViewById(R.id.editTv);
+
+
+        submitBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                textView.setText("Name :" + eT1.getText()
+                               + "\n\n Email :" + eT2.getText()
+                                + "\n\n Password :" + eT3.getText()
+                                 +  "\n\n Mobile No. :" + eT4.getText());
+
+            }
+        });
+
+    }
+
+}
 
      
