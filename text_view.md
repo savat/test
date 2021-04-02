@@ -1,4 +1,4 @@
-## ไพล์ main.xml
+##  main.xml
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -10,7 +10,7 @@
         android:id="@+id/text_view_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="หน้าแรก"
+        android:text="test"
         android:textSize="40dp"
         android:textStyle="bold" />
 
@@ -18,5 +18,5 @@
 
   <img src="http://i.imgur.com/gY8eXaj.jpg" width="300"> 
   
-      ## ไพล์  MainActivity.java
+      ##   MainActivity.java
      
