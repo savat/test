@@ -2,57 +2,84 @@
 
   ## main.xml
   
-
-1
 <?xml version="1.0" encoding="utf-8"?>
-2
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-3
-    xmlns:tools="http://schemas.android.com/tools"
-4
     android:layout_width="match_parent"
-5
-    android:layout_height="match_parent"
-6
-    android:paddingBottom="@dimen/activity_vertical_margin"
-7
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-8
-    android:paddingRight="@dimen/activity_horizontal_margin"
-9
-    android:paddingTop="@dimen/activity_vertical_margin"
-10
-    tools:context="tutorials.android.com.edittext.MainActivity">
-11
-​
-12
-<EditText
-13
-    android:layout_width="match_parent"
-14
-    android:layout_height="wrap_content"
-15
-    android:id="@+id/ideTxt"
-16
-    />
-17
+    android:layout_height="match_parent">
+
+    <!--Input Type "Text" -->
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/codeBt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter your name" />
+
+    <!--Input Type "Text" -->
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Enter your email"/>
+
+    <!--Input Type "text password" -->
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Enter your password"/>
+
+    <!--Input Type "phone" -->
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="Enter your mobile number"/>
+
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText4"
+        android:layout_centerHorizontal="true"
+        android:background="#8BC34A"
+        android:layout_marginTop="15dp"
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/editTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submitBtn"
+        android:layout_marginTop="30dp"
+        android:hint="TextView" />
+
+
 </RelativeLayout>
-18
-​
-19
-​
-20
-​
-21
-​
-22
-​
-23
-​
-24
-​
-25
-​
 
 
 
