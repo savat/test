@@ -18,5 +18,24 @@
 
   <img src="https://github.com/savat/test/raw/master/textview.jpg" width="150"> 
   
-      ##   MainActivity.java
+      ## MainActivity.java
+      
+      public class MainActivity extends AppCompatActivity implements View.OnClickListener { 
+             
+             
+              @Override 
+
+	    protected void onCreate(Bundle savedInstanceState) { 
+
+	        super.onCreate(savedInstanceState); 
+
+	        setContentView(R.layout.activity_main); 
+
+	 
+
+	        textView = findViewById(R.id.text_view_view); 
+            
+            }
+           }
+	
      
