@@ -22,7 +22,7 @@
       
       public class MainActivity extends AppCompatActivity implements View.OnClickListener { 
              
-             
+             TextView textView;
               @Override 
 
 	    protected void onCreate(Bundle savedInstanceState) { 
@@ -33,7 +33,7 @@
 
 	 
 
-	        textView = findViewById(R.id.text_view_view); 
+	        textViewtext = findViewById(R.id.text_view_view); 
             
             }
            }
