@@ -16,7 +16,7 @@
 
 </RelativeLayout>
 
-  <img src="http://i.imgur.com/gY8eXaj.jpg" width="300"> 
+  <img src="https://github.com/savat/test/raw/master/textview.jpg" width="150"> 
   
       ##   MainActivity.java
      
