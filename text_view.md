@@ -1,9 +1,4 @@
-     
-
-
-
-
-    ## ไพล์ main.xml
+## ไพล์ main.xml
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
