@@ -15,6 +15,8 @@
         android:textStyle="bold" />
 
 </RelativeLayout>
+
+  <img src="http://i.imgur.com/gY8eXaj.jpg" width="300"> 
   
       ## ไพล์  MainActivity.java
      
