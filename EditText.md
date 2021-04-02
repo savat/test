@@ -2,50 +2,57 @@
 
   ## main.xml
   
-  
-1	<?xml version="1.0" encoding="utf-8"?> 
-2	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
-3	    xmlns:app="http://schemas.android.com/apk/res-auto" 
-4	    xmlns:tools="http://schemas.android.com/tools" 
-5	    android:layout_width="match_parent" 
-6	    android:layout_height="match_parent" 
-7	    android:orientation="vertical" 
-8	    android:gravity="center" 
-9	    android:padding="16dp" 
-10	    tools:context=".MainActivity"> 
-11	 
-12	    <EditText 
-13	        android:id="@+id/name" 
-14	        android:layout_width="match_parent" 
-15	        android:layout_height="wrap_content" 
-16	        android:hint="Enter Name" 
-17	        android:inputType="text" /> 
-18	 
-19	    <EditText 
-20	        android:id="@+id/email" 
-21	        android:layout_width="match_parent" 
-22	        android:layout_height="wrap_content" 
-23	        android:hint="Enter Email" 
-24	        android:inputType="textEmailAddress" 
-25	        android:layout_marginTop="20dp"/> 
-26	 
-27	    <EditText 
-28	        android:id="@+id/password" 
-29	        android:layout_width="match_parent" 
-30	        android:layout_height="wrap_content" 
-31	        android:hint="Enter Password" 
-32	        android:inputType="numberPassword" 
-33	        android:layout_marginTop="20dp"/> 
-34	 
-35	    <Button 
-36	        android:id="@+id/submit_btn" 
-37	        android:layout_width="wrap_content" 
-38	        android:layout_height="wrap_content" 
-39	        android:text="Submit" 
-40	        android:layout_marginTop="20dp"/> 
-41	 
-42	</LinearLayout> 
-43	 
+
+1
+<?xml version="1.0" encoding="utf-8"?>
+2
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+3
+    xmlns:tools="http://schemas.android.com/tools"
+4
+    android:layout_width="match_parent"
+5
+    android:layout_height="match_parent"
+6
+    android:paddingBottom="@dimen/activity_vertical_margin"
+7
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+8
+    android:paddingRight="@dimen/activity_horizontal_margin"
+9
+    android:paddingTop="@dimen/activity_vertical_margin"
+10
+    tools:context="tutorials.android.com.edittext.MainActivity">
+11
+​
+12
+<EditText
+13
+    android:layout_width="match_parent"
+14
+    android:layout_height="wrap_content"
+15
+    android:id="@+id/ideTxt"
+16
+    />
+17
+</RelativeLayout>
+18
+​
+19
+​
+20
+​
+21
+​
+22
+​
+23
+​
+24
+​
+25
+​
 
 
 
