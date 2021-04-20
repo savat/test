@@ -1,0 +1,25 @@
+<opml version="1">
+
+<head>
+
+<title>Thailand</title>
+
+<status>200</status>
+
+</head>
+
+<body>
+
+<outline text="Stations" key="stations">
+
+<outline type="audio" text="Fab Radio 102.5 (Gospel)" URL="http://opml.radiotime.com/Tune.ashx?id=s125310" bitrate="64" reliability="75" guide_id="s125310" subtext="Freedom of Christian Music" genre_id="g103" formats="mp3" item="station" image="http://cdn-radiotime-logos.tunein.com/s125310q.png" now_playing_id="s125310" preset_id="s125310"/>
+
+</outline>
+
+<outline type="link" text="Krung Thep (Bangkok)" URL="http://opml.radiotime.com/Browse.ashx?id=r101115" guide_id="r101115"/>
+
+<outline type="link" text="All Thailand" URL="http://opml.radiotime.com/Browse.ashx?id=r101304&all=true"/>
+
+</body>
+
+</opml>
