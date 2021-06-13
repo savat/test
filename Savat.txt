@@ -1,0 +1,50 @@
+Termux Tools-----
+
+cd ~/../usr/etc/apt/
+
+rm -rf sources.list.d
+
+termux-setup-storage
+
+apt update && apt upgrade
+
+pkg install nano
+
+pkg install git
+
+pkg install wget
+
+pkg install proot
+
+git clone https://github.com/MFDGaming/ubuntu-in-termux.git
+cd ubuntu-in-termux
+
+chmod +x ubuntu.sh
+
+./ubuntu.sh 
+
+./startubuntu.sh
+
+apt update && apt upgrade
+
+apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential 
+
+
+apt-get install git
+
+git clone --single-branch -b ARM https://github.com/monkins1010/ccminer.git
+
+
+cd ccminer
+
+chmod +x build.sh
+
+chmod +x configure.sh
+
+chmod +x autogen.sh
+
+./build.sh
+
+cd ccminer
+
+./ccminer -a verus -o stratum+tcp://ap.luckpool.net:3956 -u RE3r3Bdms2gd4SXjjm7HzgkjWGg3dpEA28.YT_SAVAT1 -p x -t8
